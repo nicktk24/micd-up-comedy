@@ -1,0 +1,57 @@
+---
+import '../styles/global.css'
+
+const show = {
+  date: 'August 26, 2025',
+  time: '9:00 PM',
+  venue: 'Barstool Scottsdale, Scottsdale AZ',
+  ticketLink: 'https://example.com/tickets',
+  description: 'A night of stand-up with the hottest local and touring comedians. Don’t miss it!',
+};
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Mic'd Up Comedy – A raw, underground comedy experience." />
+    <title>Mic'd Up Comedy</title>
+  </head>
+  <body class="relative w-full h-screen bg-black text-white overflow-hidden">
+    <!-- Background image with dark overlay -->
+    <div 
+      class="absolute inset-0 bg-cover bg-center z-0"
+      style="background-image: url('/stage.png');"
+    ></div>
+    <div class="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
+
+    <!-- Fullscreen Main Content -->
+    <main class="relative z-10 w-full h-full flex flex-col md:flex-row items-center justify-center px-8 py-10 md:px-20 gap-12 text-white text-left">
+      <!-- Left Side: Logo -->
+      <div class="flex-shrink-0">
+        <img src="/micd-up-logo.png" alt="Mic'd Up Logo" class="w-48 h-48 md:w-56 md:h-56 rounded-full shadow-lg" />
+      </div>
+
+      <!-- Right Side: Show Info -->
+      <div class="flex flex-col gap-6 max-w-2xl">
+        <h1 class="text-6xl font-extrabold leading-tight">Mic’d Up Comedy Co.</h1>
+        <p class="text-2xl text-gray-300">Underground stand-up. One mic. One night.</p>
+
+        <div class="mt-4 space-y-2">
+          <h2 class="text-4xl font-bold">Next Show</h2>
+          <p class="text-xl">{show.date} — {show.time}</p>
+          <p class="text-2xl font-semibold">{show.venue}</p>
+          <p class="text-base text-gray-300 max-w-xl">{show.description}</p>
+        </div>
+
+        <a href={show.ticketLink} class="inline-block w-fit bg-white text-black px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-300 transition">
+          Get Tickets
+        </a>
+
+        <a href="https://instagram.com/micdupcomedy" target="_blank" rel="noopener" class="text-sm text-gray-400 hover:text-white underline pt-4">
+          Follow us on Instagram
+        </a>
+      </div>
+    </main>
+  </body>
+</html>
